@@ -22,6 +22,7 @@ body{
 	flex-direction: column;
 }
 #change-button{
+	position: relative;
 	padding-top: .05rem;
 	text-align: center;
 	height: 2rem;
@@ -110,3 +111,14 @@ body{
 	color: #000;
 	font-size: 1.5rem;
 }
+
+
+.click{
+	filter:invert(1);
+	position: absolute;
+	height: 35px;
+	top: 1rem;
+	transform: rotate(-35deg);
+	animation: vibrar 4s;
+
+	}
