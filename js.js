@@ -1,9 +1,21 @@
 const card_template = document.getElementById('card-temp').content
+const main = document.querySelector('main');
+const changeButton = document.getElementById('change-button')
+
+
+
 
 const random = (min,max)=>Math.floor(Math.random()	*	(max - min)		+	min)
 
 document.addEventListener('DOMContentLoaded',()=>{
 	getFetch(random(1,151))
+
+	changeButton.addEventListener('click',()=>
+	{
+		let secondChildren =  main.children[1]
+		main.removeChild(secondChildren)
+		getFetch(random(1,151))
+	})
 })
 
 
@@ -12,7 +24,6 @@ async function getFetch (id){
 
 		let fetchQuery = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 		let data = await fetchQuery.json();
-		console.log(data)
 
 		insertarCard({
 			imagen : data.sprites.other.dream_world.front_default,
@@ -34,7 +45,6 @@ function insertarCard(obj){
 	let	objeto = obj	
 
 	const CLONE  = card_template.cloneNode(true);
-	const main = document.querySelector('main');
 	const FRAGMENT = document.createDocumentFragment();
 
 	const name = CLONE.querySelector('.name')
