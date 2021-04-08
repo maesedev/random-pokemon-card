@@ -34,8 +34,7 @@ body{
 
 #change-button:hover{
 	cursor: pointer;
-	opacity: .8;
-	box-shadow: 0 0 10px #0008;
+	box-shadow: 0 0 20px #0008;
 }
 
 .card, .info,body,.card-container,#main{
